@@ -35,16 +35,17 @@ class Signup extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Image.network(
-                'https://anmg-production.anmg.xyz/yaza-co-za_sfja9J2vLAtVaGdUPdH5y7gA',
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
-                fit: BoxFit.cover,
-              ),
+              // Image.network(
+              //   'https://anmg-production.anmg.xyz/yaza-co-za_sfja9J2vLAtVaGdUPdH5y7gA',
+              //   width: MediaQuery.of(context).size.width,
+              //   height: MediaQuery.of(context).size.height,
+              //   fit: BoxFit.cover,
+              // ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -75,7 +76,7 @@ class Signup extends StatelessWidget {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(30))),
                         width: MediaQuery.of(context).size.width * 0.9,
-                        height: MediaQuery.of(context).size.height * 0.49,
+                        height: MediaQuery.of(context).size.height * 0.52,
                         child: Form(
                           key: _formKey,
                           child: Center(
@@ -85,20 +86,13 @@ class Signup extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.stretch,
                               children: [
                                 const Text(
-                                    "Look like you don't have an account. Let's create a new account for",
+                                    "Looks like you don't have an account. Let's create a new account for",
                                     // ignore: prefer_const_constructors
                                     style: TextStyle(
                                         color: Colors.white, fontSize: 20),
                                     textAlign: TextAlign.start),
                                 // ignore: prefer_const_constructors
-                                const Text(
-                                  "jane.doe@gmail.com",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                  textAlign: TextAlign.start,
-                                ),
+                        
                                 const SizedBox(height: 30),
 
                                 MyTextField(

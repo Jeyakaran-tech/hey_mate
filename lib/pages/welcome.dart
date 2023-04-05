@@ -28,6 +28,7 @@ class WelcomePage extends StatelessWidget {
       backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         child: Container(
+          width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Stack(
             alignment: Alignment.center,
@@ -147,7 +148,53 @@ class WelcomePage extends StatelessWidget {
                                     ],
                                   ),
                                 ),
-
+                                const SizedBox(height: 10),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    mainAxisAlignment: MainAxisAlignment.start,
+                                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                                    children: [
+                                      Row(
+                                         mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Don\'t have an account?',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 20),
+                                            textAlign: TextAlign.start,
+                                          ),
+                                          const SizedBox(width: 4),
+                                          const Text(
+                                            'Sign Up',
+                                            style: TextStyle(
+                                                color: Color.fromARGB(
+                                                    255, 71, 233, 133),
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          ),
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.01),
+                                      const Text('Forgot Password?',
+                                        style: TextStyle(
+                                          color: Color.fromARGB(255, 71, 233, 133),
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 20
+                                        ),
+                                      
+                                      )
+                                      
+                                    ]
+                                  ),
+                                )
 
                               ]
                             ),
