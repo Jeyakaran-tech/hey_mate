@@ -36,6 +36,7 @@ class Signup extends StatelessWidget {
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
+
           height: MediaQuery.of(context).size.height,
           child: Stack(
             alignment: Alignment.center,
@@ -46,6 +47,7 @@ class Signup extends StatelessWidget {
               //   height: MediaQuery.of(context).size.height,
               //   fit: BoxFit.cover,
               // ),
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -76,7 +78,7 @@ class Signup extends StatelessWidget {
                             borderRadius:
                                 const BorderRadius.all(Radius.circular(30))),
                         width: MediaQuery.of(context).size.width * 0.9,
-                        height: MediaQuery.of(context).size.height * 0.52,
+                        height: MediaQuery.of(context).size.height * 0.49,
                         child: Form(
                           key: _formKey,
                           child: Center(
@@ -92,7 +94,15 @@ class Signup extends StatelessWidget {
                                         color: Colors.white, fontSize: 20),
                                     textAlign: TextAlign.start),
                                 // ignore: prefer_const_constructors
-                        
+
+                                // const Text(
+                                //   "jane.doe@gmail.com",
+                                //   style: TextStyle(
+                                //       color: Colors.white,
+                                //       fontSize: 20,
+                                //       fontWeight: FontWeight.bold),
+                                //   textAlign: TextAlign.start,
+                                // ),
                                 const SizedBox(height: 30),
 
                                 MyTextField(
