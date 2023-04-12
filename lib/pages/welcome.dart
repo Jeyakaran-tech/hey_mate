@@ -5,7 +5,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:hey_mate/components/my_button.dart';
 import 'package:hey_mate/components/my_textfield.dart';
-import 'package:hey_mate/components/square_tile.dart';
+import 'package:hey_mate/widgets/google_sign_in_button.dart';
+import 'package:hey_mate/utils/authentication.dart';
 import 'package:hey_mate/pages/signup.dart';
 
 
@@ -125,25 +126,26 @@ class WelcomePage extends StatelessWidget {
                                   child: Column(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: const [
-                                      // facebook button
-                                      SquareTile(
-                                          imagePath:
-                                              'assets/images/facebook.png',
-                                          title: "Continue with Facebook"),
+                                    children: [
+                                    
                                       SizedBox(height: 10),
                                       // google button
-                                      SquareTile(
-                                        imagePath: 'assets/images/google.png',
-                                        title: "Continue with Google",
+                                      FutureBuilder(
+                                        future: Authentication.initializeFirebase(context: context),
+                                        builder: (context, snapshot) {
+                                          if (snapshot.hasError) {
+                                            return Text('Error initializing Firebase');
+                                          } 
+                                          else if (snapshot.connectionState == ConnectionState.done) {
+                                              return GoogleSignInButton();
+                                          }
+                                        return CircularProgressIndicator(
+                                          valueColor: AlwaysStoppedAnimation<Color>(
+                                            Color.fromARGB(255, 0, 0, 0),
+                                          ),
+                                        );
+                                        },
                                       ),
-
-                                      SizedBox(height: 10),
-
-                                      // apple button
-                                      SquareTile(
-                                          imagePath: 'assets/images/apple.png',
-                                          title: "Continue with Apple"),
                                       SizedBox(height: 10),
                                     ],
                                   ),
