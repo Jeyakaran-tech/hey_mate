@@ -49,7 +49,7 @@ class WelcomePage extends StatelessWidget {
                     color: Color.fromARGB(255, 0, 0, 0),
                     onPressed: () {},
                   ),
-                  SizedBox(height: MediaQuery.of(context).size.height * 0.18),
+                  SizedBox(height: MediaQuery.of(context).size.height * 0.25),
                   const Text("Hi mate!",
                       style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
@@ -67,7 +67,7 @@ class WelcomePage extends StatelessWidget {
                           borderRadius: BorderRadius.all(Radius.circular(30))
                         ),
                         width: MediaQuery.of(context).size.width * 0.9,
-                        height: MediaQuery.of(context).size.height * 0.63,
+                        height: MediaQuery.of(context).size.height * 0.53,
                         child: Form(
                           key: _formKey,
                           child: Center(

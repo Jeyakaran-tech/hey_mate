@@ -14,7 +14,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 16.0),
+      padding: const EdgeInsets.all(8.0), 
       child: _isSigningIn
           ? CircularProgressIndicator(
               valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -24,7 +24,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 backgroundColor: MaterialStateProperty.all(Colors.white),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(40),
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
               ),
@@ -40,15 +40,15 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 
                 if (user != null && context.mounted) {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                    builder: (context) => UserInfoScreen(
-                      user: user,
+                      builder: (context) => UserInfoScreen(
+                        user: user,
+                      ),
                     ),
-      ),
-    );
-  }
-},
+                  );
+                }
+              },
               child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                padding: const EdgeInsets.all(8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -58,12 +58,12 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                       height: 35.0,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 10),
+                      padding: const EdgeInsets.only(left: 20),
                       child: Text(
                         'Sign in with Google',
                         style: TextStyle(
                           fontSize: 20,
-                          color: Colors.black54,
+                          color: Color.fromARGB(255, 0, 0, 0),
                           fontWeight: FontWeight.w600,
                         ),
                       ),
