@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hey_mate/utils/authentication.dart';
 import 'package:hey_mate/pages/user_info_screen.dart';
+import 'package:hey_mate/pages/after_sign_in_screen.dart';
+
 
 class GoogleSignInButton extends StatefulWidget {
   @override
@@ -24,7 +26,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 backgroundColor: MaterialStateProperty.all(Colors.white),
                 shape: MaterialStateProperty.all(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                 ),
               ),
@@ -40,9 +42,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                 
                 if (user != null && context.mounted) {
                   Navigator.of(context).pushReplacement(MaterialPageRoute(
-                      builder: (context) => UserInfoScreen(
-                        user: user,
-                      ),
+                      builder: (context) => AfterSigninScreen(),
                     ),
                   );
                 }
@@ -55,7 +55,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   children: <Widget>[
                     Image(
                       image: AssetImage("assets/images/google.png"),
-                      height: 35.0,
+                      height: 30.0,
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 20),

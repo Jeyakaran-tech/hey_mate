@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Dribbble Auth App',
+      title: 'Hey Mate App',
       debugShowCheckedModeBanner: false,
       home: WelcomePage(),
     );

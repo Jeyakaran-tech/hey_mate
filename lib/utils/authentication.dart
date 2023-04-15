@@ -3,7 +3,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:hey_mate/pages/user_info_screen.dart';
+import 'package:hey_mate/pages/after_sign_in_screen.dart';
+
 
 class Authentication {
   static Future<FirebaseApp> initializeFirebase({
@@ -16,9 +17,7 @@ class Authentication {
   if (user != null && context.mounted)  {
     Navigator.of(context).pushReplacement(
       MaterialPageRoute(
-        builder: (context) => UserInfoScreen(
-          user: user,
-        ),
+        builder: (context) => AfterSigninScreen(),
       ),
     );
   }
