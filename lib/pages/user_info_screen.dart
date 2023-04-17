@@ -44,13 +44,17 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
     super.initState();
   }
 
+  void _dummyFunction() {
+  // This function does nothing.
+}
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.greenAccent,
+      backgroundColor: Color.fromARGB(255, 252, 252, 252),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.greenAccent,
+        backgroundColor: Color.fromARGB(255, 224, 221, 221),
       ),
       body: SafeArea(
         child: Padding(
@@ -75,13 +79,13 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     )
                   : ClipOval(
                       child: Material(
-                        color: Colors.grey,
+                        color: Color.fromARGB(255, 0, 0, 0),
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Icon(
                             Icons.person,
                             size: 60,
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ),
@@ -90,7 +94,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 'Hello',
                 style: TextStyle(
-                  color: Colors.grey,
+                  color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 26,
                 ),
               ),
@@ -98,7 +102,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 _user.displayName!,
                 style: TextStyle(
-                  color: Colors.yellow,
+                  color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 26,
                 ),
               ),
@@ -106,20 +110,26 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Text(
                 '( ${_user.email!} )',
                 style: TextStyle(
-                  color: Colors.orange,
+                  color: Color.fromARGB(255, 0, 0, 0),
                   fontSize: 20,
                   letterSpacing: 0.5,
                 ),
               ),
               SizedBox(height: 24.0),
-              Text(
-                'You are now signed in using your Google account. To sign out of your account click the "Sign Out" button below.',
-                style: TextStyle(
-                    color: Colors.redAccent,
-                    fontSize: 14,
-                    letterSpacing: 0.2),
+              ElevatedButton(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    Color.fromARGB(255, 4, 4, 4),
+                  ),
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                ),
+                onPressed: _dummyFunction, 
+                child: Text("clock my internary"),
               ),
-              SizedBox(height: 16.0),
               _isSigningOut
                   ? CircularProgressIndicator(
                       valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
@@ -127,7 +137,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                   : ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all(
-                          Colors.redAccent,
+                          Color.fromARGB(255, 4, 4, 4),
                         ),
                         shape: MaterialStateProperty.all(
                           RoundedRectangleBorder(

@@ -38,15 +38,14 @@ class _AfterSigninScreenState extends State<AfterSigninScreen> {
       UserInfoScreen userInfoScreen = UserInfoScreen(user: user!);
       _widgetOptions.add(userInfoScreen);
     }
-
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('BottomNavigationBar Sample'),
-      ),
+      // appBar: AppBar(
+      //   // title: const Text('BottomNavigationBar Sample'),
+      // ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -61,7 +60,7 @@ class _AfterSigninScreenState extends State<AfterSigninScreen> {
             label: 'Some thing',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.person),
             label: 'My profile',
           ),
         ],
