@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hey_mate/pages/welcome.dart';
 import 'package:hey_mate/utils/authentication.dart';
+import 'package:hey_mate/forms/my_iternary.dart';
 
 class UserInfoScreen extends StatefulWidget {
   const UserInfoScreen({Key? key, required User user})
@@ -127,8 +128,19 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     ),
                   ),
                 ),
-                onPressed: _dummyFunction, 
-                child: Text("clock my internary"),
+                onPressed: _dummyFunction,
+                child: Padding(
+                        padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
+                        child: Text(
+                          'Clock my iternary',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                            letterSpacing: 2,
+                          ),
+                        ),
+                      ),
               ),
               _isSigningOut
                   ? CircularProgressIndicator(
