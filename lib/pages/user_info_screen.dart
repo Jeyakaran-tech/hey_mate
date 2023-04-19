@@ -128,7 +128,17 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     ),
                   ),
                 ),
-                onPressed: _dummyFunction,
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: Text('Enter your details'),
+                        content: MyIternary(),
+                      );
+                    },
+                  );
+                },
                 child: Padding(
                         padding: EdgeInsets.only(top: 8.0, bottom: 8.0),
                         child: Text(
