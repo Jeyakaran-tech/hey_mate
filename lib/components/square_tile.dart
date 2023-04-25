@@ -16,13 +16,13 @@ class SquareTile extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white),
         borderRadius: BorderRadius.circular(16),
-        color: Colors.grey[200],
+        color: Color.fromARGB(255, 255, 255, 255),
       ),
       child: Row(
         children: [
           Image.asset(
             imagePath,
-            height: 30,
+            height: 15,
           ),
           const SizedBox(width: 20),
           Text(title,

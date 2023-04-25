@@ -133,7 +133,8 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: Text('Enter your details'),
+                        iconPadding: EdgeInsets.all(40),
+                        title: Text('Enter your Iternary'),
                         content: MyIternary(),
                       );
                     },

@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:hey_mate/utils/authentication.dart';
 import 'package:hey_mate/pages/user_info_screen.dart';
 import 'package:hey_mate/pages/after_sign_in_screen.dart';
+import 'package:hey_mate/components/square_tile.dart';
+
 
 
 class GoogleSignInButton extends StatefulWidget {
@@ -53,21 +55,7 @@ class _GoogleSignInButtonState extends State<GoogleSignInButton> {
                   mainAxisSize: MainAxisSize.min,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image(
-                      image: AssetImage("assets/images/google.png"),
-                      height: 30.0,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: Text(
-                        'Sign in with Google',
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    )
+                    SquareTile(imagePath: "assets/images/google.png", title: "Sign in with Google")
                   ],
                 ),
               ),
