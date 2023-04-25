@@ -16,11 +16,11 @@ class _MyIternaryState extends State<MyIternary> {
 
 
   void _saveData(String name, String email) {
-  _firestore.collection('users').add({
-    'name': name,
-    'email': email,
-  });
-}
+    _firestore.collection('users').add({
+      'name': name,
+      'email': email,
+    });
+  }
 
   final _myiternaryKey = GlobalKey<FormState>();
 
@@ -65,6 +65,7 @@ class _MyIternaryState extends State<MyIternary> {
               if (_myiternaryKey.currentState!.validate()) {
                 _myiternaryKey.currentState!.save();
                 _saveData(_name, _email);
+                Navigator.pop(context);
               }
             },
             child: Text('Submit'),
