@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 
 
@@ -19,13 +20,15 @@ class _MyIternaryState extends State<MyIternary> {
     String firstName, 
     String lastName,
     String email,
-    String flightNumber
+    String flightNumber,
+    DateTime selectedDate
   ) {
     _firestore.collection('myIternary').add({
       'FirstName': firstName,
       'LastName': lastName,
       'Email': email,
       'FlightNumber': flightNumber,
+      'Date of Departure': selectedDate,
     });
   }
 
@@ -35,6 +38,7 @@ class _MyIternaryState extends State<MyIternary> {
   String _lastName = '';
   String _email = '';
   String _flightNumber = '';
+  DateTime _selectedDate = DateTime.now() ;
 
   @override
   Widget build(BuildContext context) {
@@ -95,11 +99,39 @@ class _MyIternaryState extends State<MyIternary> {
                 _lastName = value!;
               },
             ),
+            GestureDetector(
+              onTap: () {
+                DatePicker.showDatePicker(
+                  context,
+                  showTitleActions: true,
+                  minTime: DateTime(2021, 1, 1),
+                  maxTime: DateTime(2030, 12, 31),
+                  onConfirm: (date) {
+                    setState(() {
+                      _selectedDate = date;
+                    });
+                  },
+                  currentTime: DateTime.now(),
+                  locale: LocaleType.en,
+                );
+              },
+              child: TextFormField(
+                decoration: InputDecoration(
+                  labelText: 'Date',
+                ),
+                enabled: false,
+                controller: TextEditingController(
+                  text: _selectedDate == null
+                      ? ''
+                      : '${_selectedDate.month}/${_selectedDate.day}/${_selectedDate.year}',
+                ),
+              ),
+            ),
             ElevatedButton(
               onPressed: () {
                 if (_myiternaryKey.currentState!.validate()) {
                   _myiternaryKey.currentState!.save();
-                  _saveData(_firstName, _lastName, _email, _flightNumber);
+                  _saveData(_firstName, _lastName, _email, _flightNumber, _selectedDate);
                   Navigator.pop(context);
                 }
               },
