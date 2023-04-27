@@ -96,7 +96,7 @@ class _MyIternaryState extends State<MyIternary> {
                 return null;
               },
               onSaved: (value) {
-                _lastName = value!;
+                _flightNumber = value!;
               },
             ),
             GestureDetector(
