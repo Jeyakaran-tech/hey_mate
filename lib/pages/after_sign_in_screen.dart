@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hey_mate/pages/user_info_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:hey_mate/pages/all_iternaries.dart';
 
 class AfterSigninScreen extends StatefulWidget {
   const AfterSigninScreen({super.key});
@@ -16,10 +17,7 @@ class _AfterSigninScreenState extends State<AfterSigninScreen> {
   static const TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Index 0: Home',
-      style: optionStyle,
-    ),
+    HomePage(),
     Text(
       'Index 1: Business',
       style: optionStyle,
